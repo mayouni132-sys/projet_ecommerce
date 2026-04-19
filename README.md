@@ -171,6 +171,9 @@ df = pd.read_csv('resultats_final.csv')
 - Python ≥ 3.10 recommandé
 - Les graphiques Plotly nécessitent `plotly` installé (`pip install plotly`)
 - L'export PNG nécessite `kaleido` (`pip install kaleido`) — l'export HTML fonctionne sans
+- pip install matplotlib pandas NumPy
+- pip install plotly pandas openpyxl
+- pip install plotly pandas
 
 ---
 
