@@ -8,14 +8,20 @@ Pipeline de nettoyage de données de ventes avec `pandas`, suivi d'une analyse d
 
 ```
 projet-ventes/
-├── README.md
+├── README.md                          ← Ce fichier
 ├── .gitignore
 ├── data/
-│   ├── ventes.csv          # Dataset brut (sale)
-│   └── ventes_clean.csv    # Dataset nettoyé, prêt pour analyse
+│   ├── ventes.csv                     ← Dataset brut (raw)
+│   └── ventes_clean.csv               ← Dataset nettoyé, prêt pour analyse
 └── notebooks/
-    ├── nettoyage_ventes.ipynb   # Pipeline de nettoyage
-    └── analyse_ca.ipynb         # Analyse du chiffre d'affaires
+    ├── nettoyage_ventes.ipynb         ← Pipeline de nettoyage des données
+    └── analyse_ca.ipynb               ← Analyse du chiffre d'affaires
+                                          • Étape 2 : Calcul CA Brut (Prix × Quantité)
+                                          • Étape 3 : Calcul CA Net (après remises)
+                                          • Étape 4 : Calcul TVA (20% sur CA Net)
+                                          • Étape 5 : CA Total de l'entreprise
+                                          • Étape 6 : Produit avec le plus gros CA Net
+                                          • Étape 7 : Export resultats_final.csv
 ```
 
 ---
@@ -94,13 +100,25 @@ df.head()
 3. Le notebook `analyse_ca.ipynb` consomme `ventes_clean.csv` pour les calculs métier
 
 ---
+##  Tâches réalisées
+
+| # | Tâche | Description |
+|---|-------|-------------|
+| 1 | Chargement des données | Import du fichier source (produits, prix, quantités, remises) |
+| 2 | **CA Brut** | Calcul : `Prix_Unitaire × Quantité` pour chaque ligne |
+| 3 | **CA Net** | Application des remises : `CA_Brut × (1 - Remise%)` |
+| 4 | **TVA (20%)** | Calcul : `CA_Net × 0.20` |
+| 5 | **CA Total** | Somme du CA Net de tous les produits |
+| 6 | **Meilleur produit** | Identification de l'ID produit avec le CA Net le plus élevé |
+| 7 | **Export CSV** | Export du fichier `resultats_final.csv` avec toutes les colonnes calculées |
+
 
 ##  Équipe & répartition
 
 | Membre       | Responsabilité                              |
 |--------------|---------------------------------------------|
 | **Rania Doghri**    | Génération du dataset & pipeline de nettoyage |
-| **[Coéquipier]** | Calcul du chiffre d'affaires & analyse      |
+| **May Ouni** | conception du script Python, calcul des indicateurs financiers, interprétation des résultats et export des données. |
 
 ---
 
@@ -118,7 +136,14 @@ df.head()
 - Séparateur : **virgule** (`,`)
 - Python ≥ 3.10 recommandé
 
+
 ---
+## Technologies utilisées
+
+- **Python 3**
+- **Pandas** — manipulation des données
+- **NumPy** — calculs numériques
+
 
 ##  Licence
 
