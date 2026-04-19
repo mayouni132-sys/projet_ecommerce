@@ -8,14 +8,20 @@ Pipeline de nettoyage de données de ventes avec `pandas`, suivi d'une analyse d
 
 ```
 projet-ventes/
-├── README.md
+├── README.md                          ← Ce fichier
 ├── .gitignore
 ├── data/
-│   ├── ventes.csv          # Dataset brut (sale)
-│   └── ventes_clean.csv    # Dataset nettoyé, prêt pour analyse
+│   ├── ventes.csv                     ← Dataset brut (raw)
+│   └── ventes_clean.csv               ← Dataset nettoyé, prêt pour analyse
 └── notebooks/
-    ├── nettoyage_ventes.ipynb   # Pipeline de nettoyage
-    └── analyse_ca.ipynb         # Analyse du chiffre d'affaires
+    ├── nettoyage_ventes.ipynb         ← Pipeline de nettoyage des données
+    └── analyse_ca.ipynb               ← Analyse du chiffre d'affaires
+                                          • Étape 2 : Calcul CA Brut (Prix × Quantité)
+                                          • Étape 3 : Calcul CA Net (après remises)
+                                          • Étape 4 : Calcul TVA (20% sur CA Net)
+                                          • Étape 5 : CA Total de l'entreprise
+                                          • Étape 6 : Produit avec le plus gros CA Net
+                                          • Étape 7 : Export resultats_final.csv
 ```
 
 ---
@@ -100,7 +106,7 @@ df.head()
 | Membre       | Responsabilité                              |
 |--------------|---------------------------------------------|
 | **Rania Doghri**    | Génération du dataset & pipeline de nettoyage |
-| **[Coéquipier]** | Calcul du chiffre d'affaires & analyse      |
+| **May Ouni** | conception du script Python, calcul des indicateurs financiers, interprétation des résultats et export des données.  |
 
 ---
 
