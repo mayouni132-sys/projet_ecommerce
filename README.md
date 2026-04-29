@@ -1,4 +1,4 @@
-# Projet ecommerce — Nettoyage & Analyse
+# Projet ecommerce — Nettoyage & Analyse & Visualisation des donnees
 
 Pipeline de nettoyage de données de ventes avec `pandas`, suivi d'une analyse du chiffre d'affaires et d'une visualisation interactive.
 
